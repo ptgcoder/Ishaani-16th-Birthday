@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Should You Gift Me? 🎂</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      background: linear-gradient(135deg, #fff0f6, #f2eaff, #fff7ed);
+      min-height: 100vh;
+      color: #4b244a;
+      padding: 25px 15px 50px;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 35px 15px 25px;
+    }
+
+    .cake {
+      font-size: 55px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      50% { transform: translateY(-8px); }
+    }
+
+    h1 {
+      font-size: clamp(30px, 6vw, 46px);
+      margin: 15px 0 10px;
+      color: #d63384;
+    }
+
+    .subtitle {
+      color: #80617d;
+      line-height: 1.7;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid #f5d5e8;
+      border-radius: 25px;
+      padding: 25px;
+      margin: 18px 0;
+      box-shadow: 0 10px 30px rgba(190, 90, 150, 0.10);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 18px 0 10px;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #e7c6dc;
+      border-radius: 13px;
+      background: #fffaff;
+      font-size: 16px;
+      color: #4b244a;
+      outline-color: #d63384;
+    }
+
+    .hint {
+      color: #987d96;
+      font-size: 13px;
+      margin-top: 7px;
+    }
+
+    button {
+      border: none;
+      border-radius: 14px;
+      padding: 15px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .main-button {
+      background: linear-gradient(135deg, #ec4899, #a855f7);
+      color: white;
+      width: 100%;
+      margin-top: 25px;
+      box-shadow: 0 7px 18px #e9b1dc;
+    }
+
+    .results-heading {
+      text-align: center;
+      margin: 35px 0 20px;
+    }
+
+    .results-heading h2 {
+      color: #d63384;
+      margin-bottom: 8px;
+    }
+
+    .gift-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 15px;
+    }
+
+    .gift {
+      background: white;
+      padding: 22px;
+      border-radius: 20px;
+      border: 1px solid #f4d9e8;
+      box-shadow: 0 5px 18px #dca9d522;
+    }
+
+    .gift-emoji {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .gift h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .price {
+      color: #d63384;
+      font-size: 19px;
+      font-weight: bold;
+      margin: 12px 0;
+    }
+
+    .gift p {
+      color: #80617d;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #fff0f6;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    .empty {
+      text-align: center;
+      background: white;
+      padding: 30px 20px;
+      border-radius: 20px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 35px;
+      color: #987d96;
+      font-size: 13px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <header class="hero">
+      <div class="cake">🎂</div>
+      <h1>What Should You Gift Me?</h1>
+      <p class="subtitle">
+        It's my birthday! 💗<br />
+        Tell me who you are and your budget.<br />
+        I'll tell you what you can gift me. 🎁
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Let's find your perfect gift ✨</h2>
+
+      <label for="relation">💌 How close are you to me?</label>
+      <select id="relation">
+        
+        <option value="acquaintance">ACQUAINTANCE(UK WHO YOU ARE)</option>
+        <option value="friend" selected>We're friends</option>
+        <option value="closefriend">We're close friends</option>
+        <option value="bestfriend">BEST FRIENDS 🫶</option>
+        <option value="family">I'm family 🏡</option>
+      </select>
+
+      <label for="budget">💸 What's your budget?</label>
+      <select id="budget">
+        <option value="100">Under ₹100</option>
+        <option value="200">₹100 – ₹200</option>
+        <option value="500" selected>₹200 – ₹500</option>
+        <option value="1000">₹500 – ₹1,000</option>
+        <option value="2000">₹1,000 – ₹2,000</option>
+        <option value="5000">₹2,000 – ₹5,000</option>
+        <option value="10000">₹5,000+</option>
+        <option value="custom">My own budget ✍️</option>
+      </select>
+
+      <div id="customBox" class="hidden">
+        <label for="customBudget">Enter your maximum budget (₹)</label>
+        <input
+          type="number"
+          id="customBudget"
+          min="1"
+          max="1000000"
+          placeholder="e.g. 750"
+        />
+      </div>
+
+      <p class="hint">
+        Don't worry, it's the thought that counts! But I still want a gift 😌
+      </p>
+
+      <button class="main-button" onclick="findGifts()">
+        Find My Gift 🎁
+      </button>
+    </section>
+
+    <section id="results" class="hidden" aria-live="polite">
+      <div class="results-heading">
+        <h2 id="resultTitle">Your gift ideas 💝</h2>
+        <p class="subtitle" id="resultSubtitle"></p>
+      </div>
+      <div class="gift-grid" id="giftGrid"></div>
+    </section>
+
+    <footer class="footer">
+      Made with 💗 for my birthday · No gift is too small!
+    </footer>
+
+  </main>
+
+  <script>
+    const gifts = [
+      {
+        name: "A handwritten letter",
+        emoji: "💌",
+        price: 0,                        
+        relations: ["acquaintance", "friend",
+          "closefriend", "bestfriend","family"],
+        description: "Write me something sweet that I can keep forever."
+      },
+      {
+        name: "Westside lipbalm lmao (Rs99)",
+        emoji: "🍫",
+        price: 100,
+        relations: ["acquaintance", "friend",
+          "closefriend", "bestfriend","family"],
+        description: "Cheapest gift i can find"
+      },
+      {
+        name: "A flower or mini diy bouquet",
+        emoji: "🌷",
+        price: 200,
+        relations: ["friend", "closefriend", "bestfriend",
+          "crush", "partner", "family"],
+        description: "Something i can keep not just ordinary flowers"
+      },
+      {
+        name: "A Charger",
+        emoji: "🖼️",
+        price: 250,
+        relations: ["acquaintance", "friend",
+          "closefriend", "bestfriend","family"],
+        description: "Genuinely need this :(("
+      },
+      {
+        name: "A small hike/trip",
+        emoji: "🧸",
+        price: 350,
+        relations: ["acquaintance", "friend",
+          "closefriend", "bestfriend","family"],
+        description: "FC road/MG road/khadakwalsa/hike or hill."
+      },
+      {
+        name: "Miniso plushieee",
+        emoji: "📸",
+        price: 500,
+        relations: ["closefriend", "bestfriend","acquaintance","family"],
+        description: "Ill sleep with it everydayyy"
+      },
+      {
+        name: "Necklace",
+        emoji: "💍",
+        price: 700,
+        relations: ["acquaintance","closefriend", "bestfriend",
+         "family"],
+        description: "Necklace with my name or initals."
+      },
+      {
+        name: "Take me to play pickleball or some sport with food after :)",
+        emoji: "🎁",
+        price: 1000,
+        relations: ["acquaintance","closefriend", "bestfriend",
+          "family"],
+        description: "A box filled with thoughtful little surprises."
+      },
+      {
+        name: "Terractive cuddle tee",
+        emoji: "🌸",
+        price: 2000,
+        relations: ["acquaintance","closefriend", "bestfriend",
+         "family"],
+        description: "The BEST sports/workout tee WITH THUMBHOLES!!!! (set of 3 is 999 each)"
+      },
+      {
+        name: "Cava Fitted jacket and flared pants set",
+        emoji: "👕",
+        price: 1500,
+        relations: ["bestfriend","family"],
+        description: "Bestest set. Fitted jacket+Flare (in black pls)"
+      },
+      {
+        name: "Cricket Shoes",
+        emoji: "🎡",
+        price: 2500,
+        relations: ["family"],
+        description: "Nivia Cricket shoes (white) for the match on 24th and also NPL."
+      },
+      {
+        name: "A Small DigiCam/Keychain camera (for camp)",
+        emoji: "💝",
+        price: 4000,
+        relations: ["family"],
+        description: "Small enough to sneak inside bags without gettung caught :)."
+      },
+      {
+        name: "A Polaroid camera (can contri with other family members :))",
+        emoji: "✨",
+        price: 5000,
+        relations: ["family"],
+        description: "FujiFilm Instax Mini 12 (in pink/purple)"
+      }
+    ];
+
+    const relationshipNames = {
+      classmate: "classmate",
+      acquaintance: "acquaintance",
+      friend: "friend",
+      closefriend: "close friend",
+      bestfriend: "BEST FRIEND 🫶",
+      crush: "crush 👀",
+      partner: "special person ❤️",
+      family: "family member 🏡"
+    };
+
+    const budgetSelect = document.getElementById("budget");
+    const customBox = document.getElementById("customBox");
+
+    budgetSelect.addEventListener("change", () => {
+      customBox.classList.toggle(
+        "hidden",
+        budgetSelect.value !== "custom"
+      );
+    });
+
+    function findGifts() {
+      const relation = document.getElementById("relation").value;
+      let budget = budgetSelect.value === "custom"
+        ? Number(document.getElementById("customBudget").value)
+        : Number(budgetSelect.value);
+
+      if (!Number.isFinite(budget) || budget < 0 ||
+          (budgetSelect.value === "custom" && budget < 1)) {
+        alert("Please enter a valid budget in rupees! 💗");
+        return;
+      }
+
+      const matchingGifts = gifts.filter(gift =>
+        gift.price <= budget &&
+        gift.relations.includes(relation)
+      );
+
+      const results = document.getElementById("results");
+      const grid = document.getElementById("giftGrid");
+      const title = document.getElementById("resultTitle");
+      const subtitle = document.getElementById("resultSubtitle");
+
+      results.classList.remove("hidden");
+      grid.innerHTML = "";
+
+      title.textContent = relation === "bestfriend"
+        ? "BESTIE, THESE ARE YOUR OPTIONS 🫶"
+        : relation === "crush"
+        ? "OHHH, SOMEONE HAS A CRUSH 👀"
+        : "Your birthday gift ideas 💝";
+
+      subtitle.textContent =
+        `As my ${relationshipNames[relation]}, with a budget of ₹${budget.toLocaleString("en-IN")}`;
+
+      if (matchingGifts.length === 0) {
+        grid.innerHTML = `
+          <div class="empty" style="grid-column: 1/-1">
+            <div style="font-size:45px">🥹</div>
+            <h3>It's the thought that counts!</h3>
+            <p>Your budget is enough for a sweet message,
+            a handmade card or a heartfelt letter. 💌</p>
+          </div>`;
+      } else {
+        // Show the most expensive eligible options first.
+        matchingGifts.sort((a, b) => b.price - a.price);
+
+        matchingGifts.forEach(gift => {
+          const item = document.createElement("article");
+          item.className = "gift";
+
+          const emoji = document.createElement("div");
+          emoji.className = "gift-emoji";
+          emoji.textContent = gift.emoji;
+
+          const name = document.createElement("h3");
+          name.textContent = gift.name;
+
+          const price = document.createElement("div");
+          price.className = "price";
+          price.textContent = gift.price === 0
+            ? "Free 💗"
+            : "₹" + gift.price.toLocaleString("en-IN");
+
+          const description = document.createElement("p");
+          description.textContent = gift.description;
+
+          const tag = document.createElement("span");
+          tag.className = "tag";
+          tag.textContent = "Within your budget ✨";
+
+          item.append(emoji, name, price, description, tag);
+          grid.appendChild(item);
+        });
+      }
+
+      results.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  </script>
+</body>
+</html>
