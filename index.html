@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -191,8 +190,12 @@
       <h1>What Should You Gift Me?</h1>
       <p class="subtitle">
         It's my birthday! 💗<br />
-        Tell me who you are and your budget.<br />
-        I'll tell you what you can gift me. 🎁
+        Select your relation and budget.<br />
+        I'll tell you what you can gift me. 🎁<br/>
+	Family--> best gift is you come visit pls<br/>
+	(ITS JUST FOR FUN YOU DONT HAVE TO BUY ANYTHING!! ITS JUST A FUNNY REPLY TO "KYA CHAHIYE"🤣)<BR/>
+	LOVE YOUUUUU
+	THANKYOU FOR OPENING IT 😁😁
       </p>
     </header>
 
@@ -202,10 +205,10 @@
       <label for="relation">💌 How close are you to me?</label>
       <select id="relation">
         
-        <option value="acquaintance">ACQUAINTANCE(UK WHO YOU ARE)</option>
-        <option value="friend" selected>We're friends</option>
-        <option value="closefriend">We're close friends</option>
-        <option value="bestfriend">BEST FRIENDS 🫶</option>
+        <option value="acquaintance">Acquaintance(UK WHO YOU ARE)🙄😇</option>
+        <option value="friend" selected>We're friends 🤝</option>
+        <option value="closefriend">We're close friends ✨</option>
+        <option value="bestfriend">BEST FRIENDS 😍</option>
         <option value="family">I'm family 🏡</option>
       </select>
 
@@ -250,7 +253,7 @@
     </section>
 
     <footer class="footer">
-      Made with 💗 for my birthday · No gift is too small!
+      Made with 💗 for my birthday · Made as a fun project · No need to buy anything please (blessings are very much welcome and needed 🙏😭)
     </footer>
 
   </main>
@@ -267,7 +270,7 @@
       },
       {
         name: "Westside lipbalm lmao (Rs99)",
-        emoji: "🍫",
+        emoji: "💄",
         price: 100,
         relations: ["acquaintance", "friend",
           "closefriend", "bestfriend","family"],
@@ -275,42 +278,42 @@
       },
       {
         name: "A flower or mini diy bouquet",
-        emoji: "🌷",
+        emoji: "💐",
         price: 200,
         relations: ["friend", "closefriend", "bestfriend",
-          "crush", "partner", "family"],
+          "acqaintance", "partner", "family"],
         description: "Something i can keep not just ordinary flowers"
       },
       {
-        name: "A Charger",
-        emoji: "🖼️",
+        name: "A Charger (type c)",
+        emoji: "🔋",
         price: 250,
         relations: ["acquaintance", "friend",
           "closefriend", "bestfriend","family"],
         description: "Genuinely need this :(("
       },
       {
-        name: "A small hike/trip",
-        emoji: "🧸",
+        name: "A small hike/trip with food ofc",
+        emoji: "⛰️ 🍰",
         price: 350,
         relations: ["acquaintance", "friend",
           "closefriend", "bestfriend","family"],
-        description: "FC road/MG road/khadakwalsa/hike or hill."
+        description: "FC road/MG road/khadakwalsa/hike (i have places just lmk)."
       },
       {
         name: "Miniso plushieee",
-        emoji: "📸",
+        emoji: "🧸",
         price: 500,
         relations: ["closefriend", "bestfriend","acquaintance","family"],
         description: "Ill sleep with it everydayyy"
       },
       {
         name: "Necklace",
-        emoji: "💍",
+        emoji: "💎",
         price: 700,
         relations: ["acquaintance","closefriend", "bestfriend",
          "family"],
-        description: "Necklace with my name or initals."
+        description: "Necklace with my initals."
       },
       {
         name: "Take me to play pickleball or some sport with food after :)",
@@ -318,54 +321,51 @@
         price: 1000,
         relations: ["acquaintance","closefriend", "bestfriend",
           "family"],
-        description: "A box filled with thoughtful little surprises."
+        description: "Sports day out"
       },
       {
         name: "Terractive cuddle tee",
-        emoji: "🌸",
+        emoji: "🧥",
         price: 2000,
         relations: ["acquaintance","closefriend", "bestfriend",
          "family"],
-        description: "The BEST sports/workout tee WITH THUMBHOLES!!!! (set of 3 is 999 each)"
+        description: "BEST sports/workout tee WITH THUMBHOLES!!!! (set of 3 is 999 each) i need for camp also pls"
       },
       {
         name: "Cava Fitted jacket and flared pants set",
-        emoji: "👕",
+        emoji: "❤️",
         price: 1500,
         relations: ["bestfriend","family"],
         description: "Bestest set. Fitted jacket+Flare (in black pls)"
       },
       {
         name: "Cricket Shoes",
-        emoji: "🎡",
+        emoji: "🏏👟",
         price: 2500,
         relations: ["family"],
         description: "Nivia Cricket shoes (white) for the match on 24th and also NPL."
       },
       {
         name: "A Small DigiCam/Keychain camera (for camp)",
-        emoji: "💝",
+        emoji: "📸",
         price: 4000,
         relations: ["family"],
-        description: "Small enough to sneak inside bags without gettung caught :)."
+        description: "Small enough to sneak inside bags without getting caught :)."
       },
       {
-        name: "A Polaroid camera (can contri with other family members :))",
+        name: "Skyliner Basketball shoes or just give money for arijit singh concert on 10/4/2027 ",
         emoji: "✨",
         price: 5000,
         relations: ["family"],
-        description: "FujiFilm Instax Mini 12 (in pink/purple)"
+        description: "Basketball shoes (great grip i cant fall at all) or help me save for arijit singh concert :)."
       }
     ];
 
     const relationshipNames = {
-      classmate: "classmate",
       acquaintance: "acquaintance",
       friend: "friend",
       closefriend: "close friend",
       bestfriend: "BEST FRIEND 🫶",
-      crush: "crush 👀",
-      partner: "special person ❤️",
       family: "family member 🏡"
     };
 
@@ -403,12 +403,6 @@
 
       results.classList.remove("hidden");
       grid.innerHTML = "";
-
-      title.textContent = relation === "bestfriend"
-        ? "BESTIE, THESE ARE YOUR OPTIONS 🫶"
-        : relation === "crush"
-        ? "OHHH, SOMEONE HAS A CRUSH 👀"
-        : "Your birthday gift ideas 💝";
 
       subtitle.textContent =
         `As my ${relationshipNames[relation]}, with a budget of ₹${budget.toLocaleString("en-IN")}`;
